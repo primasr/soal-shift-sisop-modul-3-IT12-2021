@@ -139,8 +139,8 @@ int main()
 			args.cell_B = matrix_B[i][j];  
 			// Call pthread_create
 	    	if (pthread_create(&myThread[x],NULL, &fungsiGaul, (void *)&args) != 0)
-	    	{
-	            fprintf(stderr,"Error - pthread_create()\n");
+	    	{	            
+	            printf("Error - pthread_create()\n");
 	            exit(EXIT_FAILURE);
 	    	}			
 	    	// Langsung di join setelah di create
