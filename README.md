@@ -45,17 +45,12 @@ int matrix_B[SIZE_B][SIZE_C] =
 };
 ```
 
-Lalu, kita memasukkan fungsi yang sesuai dengan formula perkalian matriks
+Lalu, kita memasukkan fungsi yang sesuai dengan formula perkalian matriks menggunakan perulangan ```for``` loop
 ```sh
 // Fungsi perkailan matrix
 void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 {
-	int i,j,k;
-	//for i -> untuk baris
-	//for j -> untuk kolom
-	//for k -> untuk iterasi sebanyak kolom untuk, 
-	//melakukan penjumlahan antar cell
-	//Dari baris dan kolom, dapat posisi i,j	
+	int i,j,k;	
 	for(i=0;i<r;i++)    
 	{    
 		for(j=0;j<c;j++)    
