@@ -139,9 +139,9 @@ int main () {
 
 ## Soal 2.b
 ### Include Library
-
-seperti biasa yang pertama kita include kan library yang kita butuhkan
-```sh
+```
+seperti biasa yang pertama kita ```include``` kan library yang kita butuhkan
+ ```sh
 // Include library yang diperlukan
 #include <stdio.h>
 #include <pthread.h>
@@ -153,7 +153,6 @@ seperti biasa yang pertama kita include kan library yang kita butuhkan
 #include <time.h>
 #include <unistd.h>
 ```
-
 lalu kita mendefine ukuran matrix yang akan digunakan
 ```sh
 // Define ukuran matriks
@@ -163,7 +162,7 @@ lalu kita mendefine ukuran matrix yang akan digunakan
 #define SIZE_C 6
 
 ```
-mendefine ukuran matriks pada matriks B dan Matrix hasilnya
+mendefine ukuran matriks pada ```matriks B dan Matrix hasilnya```
 ```sh
 // Define ukuran matriks
 int matrix_B[SIZE_A][SIZE_C];
@@ -204,7 +203,7 @@ void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
  }     
 }
 ```
-sesuai dengan comment disini kita akan membuat struct yang didalamnya ada fungsi int (cell A, cell B, x dan y )
+sesuai dengan comment disini kita akan membuat struct yang didalamnya ada fungsi ``` int (cell A, cell B, x dan y )```
 ```sh
 
 // Membuat struct untuk menyimpan beberapa variabel,
@@ -265,7 +264,9 @@ void *fungsiGaul(void *argx){
 }
 
 ```
-int main adalah bagian utamanya 
+int main adalah bagian utamanya, yang pertama kita lakukan adalah membuat keperluan shared memory nya lalu dibagian ```pthread_t myThread[MAX_SIZE] ``` 
+kita mendeklarasikan pthread nya sedangkan  untuk mendeklarasikan fungsi struct kita memanggil nama yg sudah kita buat ```myStruct args```
+kemudian menampilkan matrix yang dikirimkan dari Program lain dengan bantuan ```  printf("\nIni matrix A:\n") ```. selanjutnya  untuk mencetak nilai matrix dari user kita menngunakan ``` printf("\nInput Matrix B (4x6):\n") ```
 ```sh
 
 int main()
