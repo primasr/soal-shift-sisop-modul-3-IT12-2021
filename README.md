@@ -6,7 +6,7 @@ Kelompok IT 12 yang beranggotakan:
 
 - Prima Secondary Ramadhan  (05311940000001)
 - Shavica Ihya Qurata Ayun L . (05311940000013)
-- Puspita Dewi
+- Sri Puspita Dewi (05311940000045)
 
 ## Soal 2.a
 
@@ -64,3 +64,4 @@ void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 	}    	
 }
 ```
+## Soal 2.b
