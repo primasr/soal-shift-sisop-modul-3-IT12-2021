@@ -22,6 +22,9 @@ int matrix_Hasil[SIZE_A][SIZE_C];
 // Fungsi input matrix
 void inputMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 	int i,j;
+	//for i -> untuk baris
+	//for j -> untuk kolom
+	//Dari baris dan kolom, dapat posisi i,j	
 	for(i=0;i<r;i++)    
 	{    
 		for(j=0;j<c;j++)    
@@ -34,6 +37,9 @@ void inputMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 // Fungsi display matrix
 void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 	int i,j;
+	//for i -> untuk baris
+	//for j -> untuk kolom
+	//Dari baris dan kolom, dapat posisi i,j	
 	for(i=0;i<r;i++)    
 	{    
 		for(j=0;j<c;j++)    
@@ -46,6 +52,8 @@ void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 
 // Membuat struct untuk menyimpan beberapa variabel,
 // yang akan dikirimkan melalui Thread ke fungsi
+// Karena pada Thread, itu cuma bisa ngirim 1 variabel
+// Jadi harus dibungkus 1, lalu dikirim bareng
 struct arg_struct {
     int cell_A;
     int cell_B;
@@ -53,10 +61,13 @@ struct arg_struct {
     int y;
 };
 
+// Mempersingkat penamaan struct
 typedef struct arg_struct myStruct;
 
-// Fungsi faktorial
+// Fungsi faktorial rekursif
 int faktorial(int x) {
+	// Jika 0/1 return 1
+	// else panggil dirinya sendiri lalu kurangi 1
     if (x == 0 || x == 1) return 1;
     else return x*faktorial(x-1);
 }
@@ -65,7 +76,13 @@ int faktorial(int x) {
 // Fungsi utama penyelesaian soal
 void *fungsiGaul(void *argx){
 	
+	// Deklarasi struct berdasarkan parameter yang didapatkan
 	myStruct *args = (myStruct *)argx;
+
+	// a adalah nilai dari cell A
+	// b adalah nilai dari cell B
+	// x1 adalah posisi baris
+	// y1 adalah posisi kolom
 	int a = args -> cell_A;
 	int b = args -> cell_B;
 	int x1 = args -> x;
@@ -90,7 +107,6 @@ int main()
 	// Keperluan Shared Memory
     key_t key = 1234;
     int (*matrix_A)[SIZE_C];
-
     int shmid = shmget(key, sizeof(int[SIZE_A][SIZE_C]), IPC_CREAT | 0666);
     matrix_A = shmat(shmid, NULL, 0);	
 
@@ -104,12 +120,14 @@ int main()
     displayMatrix(matrix_A,SIZE_A, SIZE_C);    
 
     // Input matrix dari User
-    	printf("\nInput Matrix B:\n");
+    	printf("\nInput Matrix B (4x6):\n");
     inputMatrix(matrix_B,SIZE_A,SIZE_C);  
 
     int i,j;
     int x = 0;
     // Loop sebanyak 4x6
+    //for i -> baris
+    //for j -> kolom
 	for(i=0;i<SIZE_A;i++)    
 	{    
 		for(j=0;j<SIZE_C;j++)    
