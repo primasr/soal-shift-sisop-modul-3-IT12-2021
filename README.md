@@ -93,3 +93,21 @@ void displayMatrixB(int r, int c){
 }
 
 ```
+
+Berikutnya kita membuat fungsi yang digunakan untuk menampilkan hasil dari perkalian Matriks nantinya menggunakan ```void``` ```displayMatrix```
+```sh
+void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
+	int i,j;
+	//for i -> untuk baris
+	//for j -> untuk kolom
+	//Dari baris dan kolom, dapat posisi i,j	
+	for(i=0;i<r;i++)    
+	{    
+		for(j=0;j<c;j++)    
+		{    
+			printf("%d ",arr[i][j]);    
+		}    
+		printf("\n");    
+	}    	
+}
+```
