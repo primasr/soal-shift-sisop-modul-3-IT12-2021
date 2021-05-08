@@ -139,9 +139,9 @@ int main () {
 
 ## Soal 2.b
 ### Include Library
-```
+
 seperti biasa yang pertama kita include kan library yang kita butuhkan
- ```sh
+```sh
 // Include library yang diperlukan
 #include <stdio.h>
 #include <pthread.h>
@@ -153,6 +153,7 @@ seperti biasa yang pertama kita include kan library yang kita butuhkan
 #include <time.h>
 #include <unistd.h>
 ```
+
 lalu kita mendefine ukuran matrix yang akan digunakan
 ```sh
 // Define ukuran matriks
