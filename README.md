@@ -188,7 +188,7 @@ void fungsi_head(){
 }
 ```
 
-Terakhir kita buat fungsi ```main``` dengan berisikan ragam fungsi yang digunakan untuk keperluan shared memory seperti ```key_t key```,```shmid```,```shmat```,```shmdt```,```shmctl```. Nantinya dalam fungsi ```main``` terdapat fungsi yang berguna untuk memprint/menampilkan nilai dari ```displayMatrixA``` dan ```displayMatrixB```. Selanjutnya akan dipanggil fungsi ```perkalianMatrix``` sehingga nanti akan ditampilkan nilai hasil dari ```matrix_Hasil``` menggunakan ```displayMatrix```. Program juga memerlukan ```sleep(30)``` agar proses shared memory memiliki waktu yang cukup dalam menjalankan program tersebut. Terakhir kita memberi ```return (0)``` yang menandakan program telah selesai dijalankan.
+Terakhir kita buat fungsi ```main```. Pertama kita mendeklari pid terlebih dahulu yakni ```pid_t cid```, selanjutnya kita mendefinisikan ```status``` yang akan digunakan dalam proses while wait. Kemudian kita mendeklarasikan 2 pipe yakni ```fp1``` dan ```fp2``` yang mana nantinya kita gunakan dalam proses Error handling semisal proses piping terjadi masalah dengan cara menampikan ```printf``` yang berisikan "Gagal Piping". Selanjutnya dimulai proses ```fork``` jika ```cid < 0``` maka ditampilkan "Gagal Forking" dan kemudian akan di ```exit```. Jika ```cid == 0``` maka akan dijalankan proses ```if else``` yakni dalam proses childnya akan memanggil ```fungsi_ps```. Dan jika ```else``` akan menjalankan parentnya menggunakan ```while wait``` yang mana akan dijalankan menunggu proses child selesai terlebih dahulu. Terakhir kita memberi ```return (0)``` yang menandakan program telah selesai dijalankan.
 ```sh
 int main() {
 	// Deklarasi pid
