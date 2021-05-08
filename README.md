@@ -19,16 +19,17 @@ Pertama, kita include library yang dibutuhkan terlebih dahulu
 #include <sys/shm.h>
 #include <unistd.h>
 ```
+
 Selanjutnya kita mendefine ukuran matriks yang diperlukan dalam soal yakni membuat program hasil perkalian matrix (4x3 dengan 3x6)
 ```sh
-// Include library yang diperlukan
+// Define ukuran matriks
 #define MAX_SIZE 24
 #define SIZE_A 4
 #define SIZE_B 3
 #define SIZE_C 6
 ```
 
-Kemudian kita menginisiasi masing-masing nilai ukuran ```matrix_A``` dan ```matrix_B``` yang nantinya akan kita operasikan dalam perkalian Matrix
+Kemudian kita menginisiasi masing-masing nilai ukuran ```matrix_A``` dan ```matrix_B``` yang nantinya akan kita operasikan dalam program perkalian Matrix ini
 ```sh
 int matrix_A[SIZE_A][SIZE_B] = 
 {
@@ -47,7 +48,7 @@ int matrix_B[SIZE_B][SIZE_C] =
 
 Lalu, kita memasukkan fungsi yang sesuai dengan formula perkalian matriks menggunakan perulangan ```for``` loop
 ```sh
-// Fungsi perkailan matrix
+// Fungsi perkalian matrix
 void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 {
 	int i,j,k;	
@@ -111,3 +112,5 @@ void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 	}    	
 }
 ```
+
+
