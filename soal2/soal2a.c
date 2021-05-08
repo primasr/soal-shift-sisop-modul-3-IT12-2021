@@ -38,7 +38,7 @@ a*e + b*g + x*i | a*f + b*h + x*j
 dst...
 */
 
-// Fungsi perkailan matrix
+// Fungsi perkalian matrix
 void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 {
 	int i,j,k;
