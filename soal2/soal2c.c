@@ -26,6 +26,8 @@ void fungsi_head(){
 int main() {
 	// Deklarasi pid
 	pid_t cid;
+
+	// Status untuk proses while wait
 	int status;
 
 	// Deklarasi 2 pipe
@@ -33,13 +35,13 @@ int main() {
 	int fp2[2];
 	 
 	// Error handling semisal proses Piping ada masalah
-	if (pipe(fp1) == -1){
-	  fprintf(stderr, "Pipe Failed" );
+	if (pipe(fp1) == -1){	  
+	  printf("Gagal Piping\n");
 	  return 1;
 	}
 	 
 	if (pipe(fp2)== -1){
-	  fprintf(stderr, "Pipe Failed" );
+	  printf("Gagal Piping\n");
 	  return 1;
 	}
 	 
@@ -48,11 +50,13 @@ int main() {
 
 	// Jika < 0, maka gagal forking
 	if (cid < 0) {
-	  exit(EXIT_FAILURE);
+		printf("Gagal Forking\n");
+		exit(EXIT_FAILURE);
 	}
 	 
 	if (cid == 0) {
 		// ini child
+
 		close(fp1[0]);
 		dup2(fp1[1], STDOUT_FILENO);
 
@@ -70,11 +74,13 @@ int main() {
 
 		// jika gagal, langsung exit
 		if (cid < 0) {
+			printf("Gagal Forking Kedua\n");
 			exit(EXIT_FAILURE);
 		}
 
 		if (cid == 0){
 			// ini child
+
 			close(fp1[1]);
 			dup2(fp1[0], STDIN_FILENO);
 			close(fp2[0]);
@@ -84,6 +90,7 @@ int main() {
 			fungsi_sort();
 		} else{
 			// ini parent
+			
 			close(fp2[1]);
 			close(fp1[1]);    
 
