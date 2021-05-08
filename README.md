@@ -319,8 +319,9 @@ int main()
 
     return 0;
 }
-
+```
 ## Soal 2.c
+
 
 ### Include Library
 Pertama, kita include library yang dibutuhkan terlebih dahulu
