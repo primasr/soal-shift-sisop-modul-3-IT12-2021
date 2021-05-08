@@ -11,6 +11,9 @@
 #define SIZE_C 6
 
 // Inisiasi matrix A dan matrix B
+// Matrix A 	= 4x3
+// Matrix B 	= 3x6
+// Matrix Hasil = 4x6
 int matrix_A[SIZE_A][SIZE_B] = 
 {
 	{1,1,2},
@@ -25,10 +28,25 @@ int matrix_B[SIZE_B][SIZE_C] =
 	{1,5,1,0,1,2}
 };
 
+/*
+Formula perkalian matrix
+a b x | e f
+c d y | g h
+      | i j
+
+a*e + b*g + x*i | a*f + b*h + x*j
+dst...
+*/
+
 // Fungsi perkailan matrix
 void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 {
 	int i,j,k;
+	//for i -> untuk baris
+	//for j -> untuk kolom
+	//for k -> untuk iterasi sebanyak kolom untuk, 
+	//melakukan penjumlahan antar cell
+	//Dari baris dan kolom, dapat posisi i,j	
 	for(i=0;i<r;i++)    
 	{    
 		for(j=0;j<c;j++)    
@@ -45,6 +63,9 @@ void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 // Fungsi menampilkan matrix A
 void displayMatrixA(int r, int c){
 	int i,j;
+	//for i -> untuk baris
+	//for j -> untuk kolom
+	//Dari baris dan kolom, dapat posisi i,j	
 	for(i=0;i<r;i++)    
 	{    
 		for(j=0;j<c;j++)    
@@ -55,9 +76,12 @@ void displayMatrixA(int r, int c){
 	}    	
 }
 
-// Fungsi menampilkan matrix A
+// Fungsi menampilkan matrix B
 void displayMatrixB(int r, int c){
 	int i,j;
+	//for i -> untuk baris
+	//for j -> untuk kolom
+	//Dari baris dan kolom, dapat posisi i,j	
 	for(i=0;i<r;i++)    
 	{    
 		for(j=0;j<c;j++)    
@@ -71,6 +95,9 @@ void displayMatrixB(int r, int c){
 // Fungsi menampilkan matrix Hasil
 void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 	int i,j;
+	//for i -> untuk baris
+	//for j -> untuk kolom
+	//Dari baris dan kolom, dapat posisi i,j	
 	for(i=0;i<r;i++)    
 	{    
 		for(j=0;j<c;j++)    
@@ -86,7 +113,6 @@ int main () {
 	// Keperluan shared memory
     key_t key = 1234;
     int (*matrix_Hasil)[SIZE_C];
-
     int shmid = shmget(key, sizeof(int[SIZE_A][SIZE_C]), IPC_CREAT | 0666);
     matrix_Hasil = shmat(shmid, NULL, 0);   
 
