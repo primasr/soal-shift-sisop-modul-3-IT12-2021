@@ -6,7 +6,7 @@ Kelompok IT 12 yang beranggotakan:
 
 - Prima Secondary Ramadhan  (05311940000001)
 - Shavica Ihya Qurata Ayun L . (05311940000013)
-- Sri Puspita Dewi (05311940000045)
+- Puspita Dewi
 
 ## Soal 2.a
 
@@ -28,7 +28,7 @@ Selanjutnya kita mendefine ukuran matriks yang diperlukan dalam soal yakni membu
 #define SIZE_C 6
 ```
 
-Kemudian kita menginisiasi masing-masing nilai ukuran Matrix A dan Matrix B yang nantinya akan kita operasikan dalam perkalian Matrix
+Kemudian kita menginisiasi masing-masing nilai ukuran ```matrix_A``` dan ```matrix_B``` yang nantinya akan kita operasikan dalam perkalian Matrix
 ```sh
 int matrix_A[SIZE_A][SIZE_B] = 
 {
@@ -64,7 +64,32 @@ void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 	}    	
 }
 ```
-## Soal 2.b
-### Include Library
-sepertti biasa yang pertama kita include kan library yang kita butuhkan
+
+Kemudian kita membuat fungsi yang nantinya digunakan untuk menampilkan nilai dari ```matrix_A``` dan ```matrix_B``` yakni dengan ```void``` ```displayMatrixA``` dan ```displayMatrixB``` menggunakan ```for``` loop i untuk baris dan j untuk kolom
 ```sh
+void displayMatrixA(int r, int c){
+	int i,j;	
+	for(i=0;i<r;i++)    
+	{    
+		for(j=0;j<c;j++)    
+		{    
+			printf("%d ",matrix_A[i][j]);    
+		}    
+		printf("\n");    
+	}    	
+}
+
+// Fungsi menampilkan matrix B
+void displayMatrixB(int r, int c){
+	int i,j;	
+	for(i=0;i<r;i++)    
+	{    
+		for(j=0;j<c;j++)    
+		{    
+			printf("%d ",matrix_B[i][j]);    
+		}    
+		printf("\n");    
+	}    	
+}
+
+```
