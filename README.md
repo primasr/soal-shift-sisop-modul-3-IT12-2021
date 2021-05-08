@@ -65,3 +65,6 @@ void perkalianMatrix(int arr[SIZE_A][SIZE_C], int r, int c)
 }
 ```
 ## Soal 2.b
+### Include Library
+sepertti biasa yang pertama kita include kan library yang kita butuhkan
+```sh
