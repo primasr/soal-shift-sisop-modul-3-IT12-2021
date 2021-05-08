@@ -132,8 +132,9 @@ int main () {
 
 ## Soal 2.b
 ### Include Library
+```
 seperti biasa yang pertama kita include kan library yang kita butuhkan
-sh
+ ```sh
 // Include library yang diperlukan
 #include <stdio.h>
 #include <pthread.h>
@@ -144,17 +145,18 @@ sh
 #include <errno.h>
 #include <time.h>
 #include <unistd.h>
-
+```
 lalu kita mendefine ukuran matrix yang akan digunakan
-sh
+```sh
 // Define ukuran matriks
 #define MAX_SIZE 24
 #define SIZE_A 4
 #define SIZE_B 3
 #define SIZE_C 6
 
+```
 mendefine ukuran matriks pada matriks B dan Matrix hasilnya
-sh
+```sh
 // Define ukuran matriks
 int matrix_B[SIZE_A][SIZE_C];
 int matrix_Hasil[SIZE_A][SIZE_C];
@@ -174,8 +176,10 @@ void inputMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
   }    
  }    
 }
+
+```
 disini kita menggunaka fungsi void untuk menampilkan angka matrix sesuai posisi dimana i sebagai baris dan j sebagai kolom
-sh
+```sh
 // Fungsi display matrix
 void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
  int i,j;
@@ -191,9 +195,9 @@ void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
   printf("\n");    
  }     
 }
-
+```
 sesuai dengan comment disini kita akan membuat struct yang didalamnya ada fungsi int (cell A, cell B, x dan y )
-sh
+```sh
 
 // Membuat struct untuk menyimpan beberapa variabel,
 // yang akan dikirimkan melalui Thread ke fungsi
@@ -205,10 +209,10 @@ struct arg_struct {
     int x;
     int y;
 };
-
+```
 lalu disini kita membuat nama struct dengan bantuan typdef kemudian
 int faktorial untuk membuat fungsi faktorial reskursif
-sh
+```sh
 
 // Mempersingkat penamaan struct
 typedef struct arg_struct myStruct;
@@ -252,8 +256,8 @@ void *fungsiGaul(void *argx){
 
 }
 
-
-int main adalah bagian utamanya
+```
+int main adalah bagian utamanya 
 ```sh
 
 int main()
