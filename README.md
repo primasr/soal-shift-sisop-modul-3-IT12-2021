@@ -97,7 +97,14 @@ Berikutnya kita membuat fungsi yang digunakan untuk menampilkan hasil dari perka
 void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 	int i,j;
 	//for i -> untuk baris
-	@@ -111,167 +129,131 @@ void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
+	//for j -> untuk kolom
+	//Dari baris dan kolom, dapat posisi i,j	
+	for(i=0;i<r;i++)    
+	{    
+		for(j=0;j<c;j++)    
+		{    
+			printf("%d ",arr[i][j]);    
+		}    
 		printf("\n");    
 	}    	
 }
