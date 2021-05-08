@@ -113,4 +113,38 @@ void displayMatrix(int arr[SIZE_A][SIZE_C], int r, int c){
 }
 ```
 
+Terakhir kita buat fungsi ```main``` dengan berisikan ragam fungsi yang digunakan untuk keperluan shared memory seperti ```key_t key```,```shmid```,```shmat```,```shmdt```,```shmctl```. Nantinya dalam fungsi ```main``` terdapat fungsi yang berguna untuk memprint/menampilkan nilai dari ```displayMatrixA``` dan ```displayMatrixB```. Selanjutnya akan dipanggil fungsi ```perkalianMatrix``` sehingga nanti akan ditampilkan nilai hasil dari ```matrix_Hasil``` menggunakan ```displayMatrix```. Program juga memerlukan ```sleep(30)``` agar proses shared memory memiliki waktu yang cukup dalam menjalankan program tersebut. Terakhir kita memberi ```return (0)``` yang menandakan program telah selesai dijalankan.
+```sh
+int main () {
+
+	// Keperluan shared memory
+    key_t key = 1234;
+    int (*matrix_Hasil)[SIZE_C];
+    int shmid = shmget(key, sizeof(int[SIZE_A][SIZE_C]), IPC_CREAT | 0666);
+    matrix_Hasil = shmat(shmid, NULL, 0);   
+
+    // Display matrix A dan B
+		printf("\nDisplay Matrix A:\n");
+	displayMatrixA(SIZE_A, SIZE_B);
+		printf("\nDisplay Matrix B:\n");
+	displayMatrixB(SIZE_B, SIZE_C);		
+
+	// Call perkalian matrix
+	perkalianMatrix(matrix_Hasil,SIZE_A, SIZE_C);
+
+	// Display matrix Hasil
+		printf("\nDisplay Matrix Hasil:\n");
+	displayMatrix(matrix_Hasil,SIZE_A, SIZE_C);
+
+	// Perlu di sleep. Agar proses shared memory memiliki,
+	// waktu cukup untuk menggunakan memory tersebut
+	sleep(30);
+
+	// Keperluan shared memory
+    shmdt(matrix_Hasil);
+    shmctl(shmid, IPC_RMID, NULL);
+
+	return 0;
+}
+```
 
