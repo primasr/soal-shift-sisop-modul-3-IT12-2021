@@ -139,7 +139,6 @@ int main () {
 
 ## Soal 2.b
 ### Include Library
-```
 seperti biasa yang pertama kita ```include``` kan library yang kita butuhkan
  ```sh
 // Include library yang diperlukan
