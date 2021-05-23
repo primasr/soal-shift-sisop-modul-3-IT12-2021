@@ -436,7 +436,7 @@ int main() {
 	}
 	return 0;
 }
-
+```
 ## Soal 3
 
 [Link Soal](https://docs.google.com/document/d/1ud1JyncoSDAo5hA03wPvjn7QBHPUeUG1eBJ8ETtq2dQ/edit)
