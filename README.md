@@ -440,16 +440,21 @@ int main() {
 ## Soal 3
 
 [Link Soal](https://docs.google.com/document/d/1ud1JyncoSDAo5hA03wPvjn7QBHPUeUG1eBJ8ETtq2dQ/edit)
+
 [Link Source Code Soal 3](https://github.com/primasr/soal-shift-sisop-modul-3-IT12-2021/blob/main/soal3/soal3.c)
 
 Inti dari soal:
 
 1. Membuat program otomasi untuk melakukan kategorisasi file. Dimana nanti akan dibuat sebuah folder dengan nama sesuai dengan extension yang ada didalamnya
+
 2. Ada 3 mode program:
-2.1. Mode Pertama (opsi -f) = Program melakukan kategorisasi pada beberapa file yang diinputkan melalui argument ketika melakukan execute program. Contoh execute: ```./exe -f lagu.mp3 gambar.png```
-text.txt
-2.2. Mode Kedua (opsi -d) = Program melakukan kategorisasi pada suatu folder lalu hasil kategorisasinya dibawa keluar folder tersebut. Contoh execute: ```./exe -d /path/namafolder ```
-2.3. Mode Ketiga (opsi *) = Program melakukan kategorisasi pada folder file execute dijalankan. Contoh execute: ```./exe *```
+
+- Mode Pertama (opsi -f) = Program melakukan kategorisasi pada beberapa file yang diinputkan melalui argument ketika melakukan execute program. Contoh execute: ```./exe -f lagu.mp3 gambar.png text.txt ```
+
+- Mode Kedua (opsi -d) = Program melakukan kategorisasi pada suatu folder lalu hasil kategorisasinya dibawa keluar folder tersebut. Contoh execute: ```./exe -d /path/namafolder ```
+
+- Mode Ketiga (opsi *) = Program melakukan kategorisasi pada folder file execute dijalankan. Contoh execute: ```./exe *```
+
 
 ### Include Library
 ```sh
