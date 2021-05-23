@@ -437,6 +437,22 @@ int main() {
 	return 0;
 }
 ```
+### Dokumentasi Soal 2
+#### A. Hasil Run Program 2a
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262247-b6575580-bc04-11eb-89be-5fae89ebb482.png" width="500">  
+</p>
+
+#### B. Hasil Run Program 2b
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262246-b5bebf00-bc04-11eb-94c5-7175f309bf78.png" width="500">  
+</p>
+
+#### C. Hasil Run Program 2c
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262245-b48d9200-bc04-11eb-927c-af51b3a60e60.png" width="500">  
+</p>
+
 ## Soal 3
 
 [Link Soal](https://docs.google.com/document/d/1ud1JyncoSDAo5hA03wPvjn7QBHPUeUG1eBJ8ETtq2dQ/edit)
@@ -776,3 +792,65 @@ void *pindahFile(void *filename)
 
 }
 ```
+
+### Dokumentasi Soal 3
+#### A. Hasil Run Program Pertama
+
+1. Run Program
+
+Jika berhasil dikategorisasikan, maka akan memunculkan message ```File n-th: Berhasil dikategorikan```
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262081-26191080-bc04-11eb-9d0e-cf1bd8728953.png" width="500">  
+</p>
+
+2. Tampilan Folder setelah dilakukan run program
+
+Dibuat beberapa file dengan nama sesuai extension file yang telah kita kategorisasikan
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262079-25807a00-bc04-11eb-8e29-50ff92d4538c.png" width="500">  
+</p>
+
+3. Salah satu isi, didalam folder tersebut 
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262077-24e7e380-bc04-11eb-8a1b-a6bf9303742e.png" width="500">  
+</p>
+
+#### B. Hasil Run Program Kedua
+1. Tampilan Folder bernama ```mboh```
+
+Didalamnya sudah beberapa file yang ingin kita kategorisasikan
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262075-244f4d00-bc04-11eb-9798-fd4bb282ee26.png" width="500">  
+</p>
+
+2. Run program
+
+Jika sukses, akan memunculkan tulisan ```Direktori sukses disimpan```
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262074-23b6b680-bc04-11eb-8511-a472b4a79515.png" width="500">  
+</p>
+
+3. Tampilan folder
+
+File yang telah dikategorisasikan, akan dibawa keluar dari folder ```mboh``` tadi
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262073-23b6b680-bc04-11eb-8dbd-d5597a70f254.png" width="500">  
+</p>
+
+#### C. Hasil Run Program ketiga
+1. Tampilan Awal Folder
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262072-22858980-bc04-11eb-9270-60a8ab2c2c00.png" width="500">  
+</p>
+
+2. Run Program
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262071-21ecf300-bc04-11eb-99a1-4db03427ed0a.png" width="500">  
+</p>
+
+3. Tampilan Akhir Folder
+
+Semua file telah ter-kategorikan
+<p>
+  <img src="https://user-images.githubusercontent.com/73151849/119262068-21545c80-bc04-11eb-9d76-593082213566.png" width="500">  
+</p>
